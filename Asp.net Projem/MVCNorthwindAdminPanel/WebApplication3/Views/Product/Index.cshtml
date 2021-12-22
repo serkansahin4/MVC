@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<WebApplication3.Models.Product>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Products</h1>
+    <a href="/Product/Create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50"></i> Create
+    </a>
+</div>
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Category</th>
+                 
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (WebApplication3.Models.Product item in Model)
+                    {
+                        <tr>
+                            <td>@item.ProductID</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.UnitPrice</td>
+                            <td>@item.UnitsInStock</td>
+                            <td>@item.Category.CategoryName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
