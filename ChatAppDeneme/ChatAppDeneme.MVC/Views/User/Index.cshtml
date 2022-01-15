@@ -1,0 +1,36 @@
+﻿@using ChatAppDeneme.Entities.Concrete
+@model User
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            @if (TempData["Kontrol"] != null)
+            {
+                <p>@TempData["Kontrol"]</p>
+            }
+            <form method="post">
+                <div class="row">
+                    @Html.Label("Kullanıcı Adı")
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                </div>
+                <div class="row">
+                    @Html.Label("Parola")
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary mt-4">Giriş Yap</button>
+                </div>
+            </form>
+        </div>
+        <div class="row text-center"><a href="/User/Member" class="text-decoration-none mt-2">Üye Ol</a></div>
+    </div>
+
+</body>
+</html>

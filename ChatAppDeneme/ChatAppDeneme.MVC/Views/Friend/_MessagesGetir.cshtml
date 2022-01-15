@@ -1,0 +1,66 @@
+﻿@using ChatAppDeneme.Entities.Concrete
+@model List<ChatAppDeneme.Entities.Concrete.UserFriend>
+
+<style>
+    a:hover {
+        color: black;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header text-center bg-dark text-white">Friends</div>
+            <div class="card-body">
+
+                <div id="Mesajlar2">
+                    @foreach (ChatAppDeneme.Entities.Concrete.UserFriend item in Model)
+                    {
+
+                        @Ajax.ActionLink(item.Friend.FirstName+" "+item.Friend.LastName,
+                        "_MessageAll", "Message",
+                        new {item.Friend.Id},
+                        new AjaxOptions { HttpMethod = "GET",
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "Mesajlar" },
+                        new {@class="text-decoration-none",name="ABC",id=item.Friend.Id})
+
+                        <hr />
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="row" id="chatGet">
+
+        </div>
+        <div class="row" id="Mesajlar"></div>
+
+    </div>
+    <script>
+ //BURDA BUTONA TIKLAYINCA CHATGET İSİMLİ DİVİN İÇERİSİNE MESAJ TEXTBOXU VE BUTONU EKLENCEK
+        $(document).ready(function () {
+            
+            $("#Mesajlar2").on("click", "a", function () {
+                abec = $(this).attr("id");
+                $("#chatGet").empty()
+                $("#chatGet").append(`<div id="ids" class="card">
+                <div class="card-header"><h2>@Html.Label("Mesaj İçeriği")</h2></div>
+                <div class="card-body">
+                @using (Html.BeginForm("_MessageChatGetir", "Message", FormMethod.Post))
+                {
+                    @Html.TextBox("Mesaj",null, new { @class = "form-control" })
+                    <button id="selamk" class="btn btn-primary form-control mt-3">Gönder</button>}
+                 </div> </div>`)
+
+            })
+            $('#Mesajlar2').find('a[id="' + @ViewBag.Idf + '"]').trigger('click');                
+            
+        })
+
+
+    </script>
+</div>

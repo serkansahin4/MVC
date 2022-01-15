@@ -1,0 +1,20 @@
+﻿@{
+    int friendId = Convert.ToInt32(Session["FriendId"]);
+    int userId = Convert.ToInt32(Session["User"]);
+}
+@model List<ChatAppDeneme.Entities.Concrete.Message>
+
+
+@foreach (ChatAppDeneme.Entities.Concrete.Message item in Model)
+{
+<div class="row p-4">
+    @if (item.User.Id == userId)
+    {
+        <p class="bg-white text-danger text-end" style="border-color:#9c9c9c;border-radius:5px;border-style:solid;border-width:1px;"><a class="active d-block text-black" style="text-decoration:none;">@item.User.FirstName</a> @item.Mesaj</p>
+    }
+    else if (item.User.Id == friendId)
+    {
+        <p class="bg-white text-danger text-start" style="border-color:#9c9c9c;border-radius:5px;border-style:solid;border-width:1px;"><a class="active d-block text-black" style="text-decoration:none;">@item.User.FirstName</a> @item.Mesaj</p>
+    }
+</div>
+}

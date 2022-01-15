@@ -1,0 +1,37 @@
+﻿@model ChatAppDeneme.Entities.Concrete.User
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Member</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            <div class="row">
+                @Html.Label("Adı")
+                @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            </div>
+            <div class="row">
+                @Html.Label("Soyadı")
+                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            </div>
+            <div class="row">
+                @Html.Label("Kullanıcı Adı")
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+            </div>
+            <div class="row">
+                @Html.Label("Parola")
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-success">Üye Ol</button>
+            </div>
+            <div class="row text-center"><a href="/User/Index" class="text-decoration-none mt-2">Giriş Yap</a></div>
+
+        </form>
+    </div>
+</body>
+</html>
