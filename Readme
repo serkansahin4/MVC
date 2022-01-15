@@ -1,0 +1,13 @@
+Eksikler
+Arkadaş ekleme.
+Mesaj sayfası güncelleme (Signal R Kullanmadığım için.)
+
+
+Bilgi*
+EntityFramework + CodeFirst ile oluşturuldu.
+Connection Stringi kendinize göre ayarlamanız gerekiyor.
+OOP, SOLID ve katmanlı mimari kullanıldı.
+Solid in d sine yani Dependency inversion a uyulmadı. (Eksikliğimden kaynaklı.)
+
+View*
+Görüntü üzerinde fazla çalışılmadı. Daha iyisini yapabilirdim ancak vaktim kısıtlı olduğu için sadece backend kısmına yoğunlaştım.
