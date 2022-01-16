@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>Products</h2>
+
+                <form>
+                    <label>Product Name</label>
+                    <input type="text" id="productName" class="form-control"/>
+                    <label>Unit Price</label>
+                    <input type="text" id="unitPrice" class="form-control" />
+                    <label>Unit In Stock</label>
+                    <input type="text" id="unitInStock" class="form-control"/>
+                    <button id="Submit"></button>
+                </form>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Unit Price</th>
+                            <th>Unit In Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableItems">
+                        <tr>
+                            <td>Product Name</td>
+                            <td>Unit Price</td>
+                            <td>Unit In Stock</td>
+                            <td><button class="btn btn-danger">Sil</button></td>
+                            <td><button class="btn btn-primary">Güncelle</button></td>
+                            <td><button class="btn btn-sm btn-primary" id="Sec">Seç</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../Scripts/jquery-3.6.0.js"></script>
+    <script src="../Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="js/Tasarim.js"></script>
+</body>
+</html>
