@@ -1,0 +1,10 @@
+﻿@model List<Eticaret.Models.Entities.Category>
+
+@foreach (Eticaret.Models.Entities.Category item in Model)
+{
+    <ul class="navbar-brand">
+        <li class="nav-item">
+            <a class="nav-link" href="/ProductCategories/_Categories/@item.Id">@item.CategoryName</a>
+        </li>
+    </ul>
+}

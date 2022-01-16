@@ -1,0 +1,31 @@
+﻿@model Eticaret.Models.Entities.Customer
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @if (TempData["UyelikOnaylandi"] != null)
+        {
+            <div class="row bg-primary text-white">@TempData["UyelikOnaylandi"]</div>
+        }
+        @if (TempData["BasarisizGiris"] != null)
+        {
+            <div class="row bg-danger text-white">@TempData["BasarisizGiris"]</div>
+        }
+        <div class="row">
+            <form method="post">
+                @Html.Label("Kullanıcı Adı")
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                @Html.Label("Parola")
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                <button class="btn btn-success">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

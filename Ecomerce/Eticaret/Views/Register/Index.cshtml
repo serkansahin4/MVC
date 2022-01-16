@@ -1,0 +1,28 @@
+﻿@model Eticaret.Models.Entities.Customer
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div> 
+        <form method="post">
+            @Html.Label("First Name")
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            @Html.Label("Last Name")
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            @Html.Label("Email")
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            @Html.Label("User Name")
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+            @Html.Label("Password")
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+            <button class="btn btn-primary">Üye Ol</button>
+        </form>
+    </div>
+</body>
+</html>
